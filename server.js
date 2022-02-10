@@ -20,6 +20,7 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000);
-
-console.log("app is listening");
+// start the server listening for requests
+server.listen(process.env.PORT || 3000, () =>
+  console.log("Server is running...")
+);
