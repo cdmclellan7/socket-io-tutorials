@@ -18,6 +18,10 @@ io.on("connection", (socket) => {
   socket.on("chat message", (msg) => {
     io.emit("chat message", msg);
   });
+
+  socket.on("userConnected", () => {
+    io.emit("chat message", "a user has connected");
+  });
 });
 
 // start the server listening for requests
